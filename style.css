@@ -1,130 +1,102 @@
+/* General Body Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: &#39;Inter&#39;, sans-serif;
     background-color: #f4f7f6;
+    color: #333;
     margin: 0;
-    padding: 20px;
     display: flex;
     justify-content: center;
-}
-
-.app-container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 600px;
-}
-
-h1 {
-    color: #005a78;
-    text-align: center;
-}
-
-.form-section input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-button {
-    width: 100%;
-    padding: 15px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-/* Styles for the PDF Template */
-#invoice-template {
-    width: 210mm; /* A4 width */
-    min-height: 297mm; /* A4 height */
-    padding: 20mm;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
     box-sizing: border-box;
-    background: white;
-    color: #333;
-    font-size: 12pt;
 }
 
-.invoice-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
+/\* Main Container \*/
+.container {
+width: 100%;
+max-width: 600px;
+margin: 20px;
 }
 
-.logo {
-    max-width: 180px;
+/\* Form Container Styling \*/
+.form-container {
+background-color: \#ffffff;
+padding: 30px 40px;
+border-radius: 12px;
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+border: 1px solid \#e9ecef;
 }
 
-.clinic-info {
-    text-align: right;
+/\* Headings and Paragraphs \*/
+h1 {
+color: \#005f73;
+text-align: center;
+margin-bottom: 10px;
+font-weight: 700;
 }
 
-.clinic-info h2 {
-    margin: 0;
-    color: #007bff;
+p {
+text-align: center;
+color: \#6c757d;
+margin-bottom: 30px;
+font-size: 1rem;
 }
 
-.clinic-info p {
-    margin: 5px 0;
-    font-size: 10pt;
+/\* Input Fields and Labels \*/
+.input-group {
+margin-bottom: 20px;
 }
 
-#invoice-template h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
+label {
+display: block;
+margin-bottom: 8px;
+font-weight: 500;
+color: \#495057;
+font-size: 0.9rem;
 }
 
-.invoice-details {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid \#ced4da;
+border-radius: 8px;
+box-sizing: border-box; /\* Important for padding and width calculation \*/
+font-family: 'Inter', sans-serif;
+font-size: 1rem;
+transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.invoice-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 30px;
+textarea {
+resize: vertical;
 }
 
-.invoice-table th,.invoice-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+input:focus,
+textarea:focus {
+outline: none;
+border-color: \#00a99d;
+box-shadow: 0 0 0 3px rgba(0, 169, 157, 0.15);
 }
 
-.invoice-table th {
-    background-color: #f2f2f2;
+/\* Button Styling \*/
+.btn {
+width: 100%;
+padding: 15px;
+background-color: \#00a99d;
+color: white;
+border: none;
+border-radius: 8px;
+font-size: 1rem;
+font-weight: 700;
+cursor: pointer;
+transition: background-color 0.2s, transform 0.2s;
+margin-top: 10px;
 }
 
-.total-label {
-    text-align: right;
-    font-weight: bold;
-    border: none!important;
-}
-
-.total-value {
-    font-weight: bold;
-    font-size: 14pt;
-    text-align: right;
-}
-
-.invoice-footer {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 10pt;
-    color: #777;
+.btn:hover {
+background-color: \#008a7d;
+transform: translateY(-2px);
 }
