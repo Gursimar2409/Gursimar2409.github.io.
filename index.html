@@ -3,79 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Dental Cure Clinic - Invoice Generator</title>
+    <title>Dental Invoice Generator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- pdf-lib and pdfmake libraries for PDF generation -->
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
 </head>
 <body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Invoice Generator</h1>
+            <p>Enter patient and billing details below.</p>
+            
+            <form id="invoiceForm">
+                <div class="input-group">
+                    <label for="patientName">Patient Full Name</label>
+                    <input type="text" id="patientName" placeholder="e.g., John Doe" required>
+                </div>
 
-    <div class="app-container">
-        <h1>Invoice Generator</h1>
-        <p>Enter patient and billing details below.</p>
+                <div class="input-group">
+                    <label for="appointmentDate">Appointment Date</label>
+                    <input type="date" id="appointmentDate" required>
+                </div>
 
-        <div class="form-section">
-            <input type="text" id="patientName" placeholder="Patient Full Name">
-            <input type="text" id="patientID" placeholder="Patient ID / Account Number">
-            <input type="text" id="invoiceNumber" placeholder="Invoice Number">
-            <input type="date" id="invoiceDate">
-            <input type="text" id="treatment" placeholder="Treatment(s) Performed">
-            <input type="text" id="medications" placeholder="Medications Prescribed">
-            <input type="number" id="billAmount" placeholder="Total Bill Amount ($)">
-            <button onclick="generatePDF()">Generate PDF Invoice</button>
+                <div class="input-group">
+                    <label for="treatment">Treatment(s) Performed</label>
+                    <textarea id="treatment" placeholder="e.g., Root Canal, Teeth Cleaning" rows="3" required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="medications">Medications Prescribed</label>
+                    <textarea id="medications" placeholder="e.g., Amoxicillin 500mg, Ibuprofen 400mg" rows="3"></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label for="billAmount">Total Bill Amount (₹)</label>
+                    <input type="number" id="billAmount" placeholder="e.g., 5000" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="nextAppointment">Next Appointment Date</label>
+                    <input type="date" id="nextAppointment">
+                </div>
+
+                <button type="submit" class="btn">Generate PDF Invoice</button>
+            </form>
         </div>
     </div>
 
-    <div id="invoice-template" style="display: none;">
-        <div class="invoice-header">
-            <div class="clinic-info">
-                <h2>The Dental Cure Clinic</h2>
-                <p>123 Smile Street, Toothville, ST 54321</p>
-                <p>Phone: (555) 123-4567 | Email: contact@dentalcure.com</p>
-            </div>
-        </div>
-        <hr>
-        <h1>INVOICE</h1>
-        <div class="invoice-details">
-            <div class="patient-details">
-                <strong>Bill To:</strong>
-                <p id="pdf-patientName"></p>
-                <p>Patient ID: <span id="pdf-patientID"></span></p>
-            </div>
-            <div class="invoice-meta">
-                <p><strong>Invoice #:</strong> <span id="pdf-invoiceNumber"></span></p>
-                <p><strong>Date:</strong> <span id="pdf-invoiceDate"></span></p>
-            </div>
-        </div>
-        <table class="invoice-table">
-            <thead>
-                <tr>
-                    <th>Description</th>
-                    <th>Amount</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Treatment(s) Performed:</strong><br><span id="pdf-treatment"></span></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><strong>Medications Prescribed:</strong><br><span id="pdf-medications"></span></td>
-                    <td></td>
-                </tr>
-                 <tr>
-                    <td class="total-label">Total Amount Due</td>
-                    <td class="total-value" id="pdf-billAmount"></td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="invoice-footer">
-            <p><strong>Payment Due within 30 days.</strong></p>
-            <p>Thank you for choosing The Dental Cure Clinic for your dental care needs!</p>
-        </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Your custom JavaScript -->
     <script src="script.js"></script>
-
 </body>
 </html>
