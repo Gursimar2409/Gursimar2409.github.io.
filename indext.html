@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+<head>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+    <title>Dental Invoice Generator</title>
+    <link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;>
+    <link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;>
+    <link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin>
+    <link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;>
+    <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js&quot;></script>
+    <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js&quot;></script>
+</head>
+<body>
+    <div class=&quot;container&quot;>
+        <div class=&quot;form-container&quot;>
+            <h1>Invoice Generator</h1>
+            <p>Enter patient and billing details below.</p>
+
+    <form id="invoiceForm">
+        <div class="input-group">
+            <label for="patientName">Patient Full Name</label>
+            <input type="text" id="patientName" placeholder="e.g., John Doe" required>
+        </div>
+
+        <div class="input-group">
+            <label for="appointmentDate">Appointment Date</label>
+            <input type="date" id="appointmentDate" required>
+        </div>
+
+        <div class="input-group">
+            <label for="treatment">Treatment(s) Performed</label>
+            <textarea id="treatment" placeholder="e.g., Root Canal, Teeth Cleaning" rows="3" required></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="medications">Medications Prescribed</label>
+            <textarea id="medications" placeholder="e.g., Amoxicillin 500mg, Ibuprofen 400mg" rows="3"></textarea>
+        </div>
+        
+        <div class="input-group">
+            <label for="billAmount">Total Bill Amount (₹)</label>
+            <input type="number" id="billAmount" placeholder="e.g., 5000" required>
+        </div>
+
+        <button type="submit" class="btn">Generate PDF Invoice</button>
+    </form>
+</div>
+
+</body>
+</html>
+
