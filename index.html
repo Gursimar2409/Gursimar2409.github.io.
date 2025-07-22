@@ -14,10 +14,10 @@
 
         <div class="form-section">
             <input type="text" id="patientName" placeholder="Patient Full Name">
-            <input type="date" id="invoiceDate">
+            <input type="text" id="invoiceNumber" placeholder="Invoice Number">
             <input type="text" id="treatment" placeholder="Treatment(s) Performed">
             <input type="text" id="medications" placeholder="Medications Prescribed">
-            <input type="number" id="billAmount" placeholder="Total Bill Amount ($)"> 
+            <input type="number" id="billAmount" placeholder="Total Bill Amount (₹)">
             <button onclick="generatePDF()">Generate PDF Invoice</button>
         </div>
     </div>
@@ -28,7 +28,7 @@
             <div class="clinic-info">
                 <h2>The Dental Cure Clinic</h2>
                 <p>F-201 Skytech Matrott Sector 76 Noida</p>
-                <p>Phone: 9810912131</p>
+                <p>Phone:9810912131</p>
             </div>
         </div>
         <hr>
@@ -37,11 +37,10 @@
             <div class="patient-details">
                 <strong>Bill To:</strong>
                 <p id="pdf-patientName"></p>
-                <p>Patient ID: <span id="pdf-patientID"></span></p>
             </div>
             <div class="invoice-meta">
                 <p><strong>Invoice #:</strong> <span id="pdf-invoiceNumber"></span></p>
-                <p><strong>Date:</strong> <span id="pdf-invoiceDate"></span></p>
+                <p><strong>Date:</strong> <span id="pdf-currentDate"></span></p>
             </div>
         </div>
         <table class="invoice-table">
